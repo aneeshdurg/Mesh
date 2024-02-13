@@ -8,7 +8,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 commit = {
     "rules_cc": "aa7ff810cf5ec99ca34f784743b33631b74c2d16",
-    "googletest": "aa533abfd4232b01f9e57041d70114d5a77e6de0",
+    "googletest": "6eb225cb8823c254d3a64549f2e1efad05c01757",
     "benchmark": "bc5651e54a7e178ca6b1e27e469a9be19cfa62c4", # 1.5.4
     "heap_layers": "08ca96cfe11b1dd1c504fb7be613ad00756d568f",
 }
@@ -24,7 +24,7 @@ http_archive(
 
 http_archive(
     name = "com_google_googletest",
-    sha256 = "ab7d3be1f3781984102d7c12d7dc27ae2695a817c439f24db8ffc593840c1b17",
+    sha256 = "989127e7c0e06c3132e1d90e2ec679bf4b8d03f0e7200006ffd1dd05aa16af27",
     strip_prefix = "googletest-{}".format(commit["googletest"]),
     urls = [
         "https://github.com/google/googletest/archive/{}.zip".format(commit["googletest"]),
