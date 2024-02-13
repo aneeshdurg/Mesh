@@ -3,16 +3,17 @@
 # Version 2.0, that can be found in the LICENSE file.
 
 PREFIX       = /usr
-BAZEL_CONFIG = --config=modern-amd64
 LIB_SUFFIX   =
 
 UNAME_S = $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
+BAZEL_CONFIG = --macos_cpus=x86_64,arm64
 LIB_EXT      = dylib
 BAZEL_PREFIX = darwin
 LDCONFIG     =
 PREFIX       = /usr/local
 else
+BAZEL_CONFIG = --config=modern-amd64
 LIB_EXT      = so
 BAZEL_PREFIX = k8
 LDCONFIG     = ldconfig
