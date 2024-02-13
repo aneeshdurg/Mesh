@@ -33,6 +33,10 @@ ifneq ($V, 1)
 MAKEFLAGS       += -s
 endif
 
+ifeq ($(DEBUG), 1)
+BAZEL_CONFIG += --config=debugsymbols
+endif
+
 .SUFFIXES:
 .SUFFIXES: .cc .c .o .d .test
 
