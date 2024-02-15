@@ -76,6 +76,8 @@ static constexpr size_t kAlignment = 8;
 static constexpr int kMinAlign = 16;
 #ifdef __APPLE__
 static constexpr uint64_t kPageSize = 4 * 4096;
+// This is a hack that basically makes 16KB pages look like 4KB pages to the
+// allocator. This should be replaced with better support for larger pages.
 static constexpr uint64_t kBytesPerBit = 4;
 #else
 static constexpr uint64_t kPageSize = 4096;
