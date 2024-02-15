@@ -74,7 +74,13 @@ static constexpr size_t kMaxSize = 16384;
 static constexpr size_t kClassSizesMax = 25;
 static constexpr size_t kAlignment = 8;
 static constexpr int kMinAlign = 16;
+#ifdef __APPLE__
+static constexpr uint64_t kPageSize = 4 * 4096;
+static constexpr uint64_t kBytesPerBit = 4;
+#else
 static constexpr uint64_t kPageSize = 4096;
+static constexpr uint64_t kBytesPerBit = 1;
+#endif
 static constexpr size_t kMaxFastLargeSize = 256 * 1024;  // 256Kb
 
 static constexpr size_t kMaxSplitListSize = 16384;

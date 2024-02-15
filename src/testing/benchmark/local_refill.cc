@@ -8,6 +8,7 @@
 
 #include <benchmark/benchmark.h>
 
+#include "common.h"
 #include "internal.h"
 #include "global_heap.h"
 #include "runtime.h"
@@ -16,7 +17,7 @@
 using namespace mesh;
 
 static constexpr size_t kMiniHeapCount = 2 << 18;
-static constexpr uint32_t kObjSize = 16;
+static constexpr uint32_t kObjSize = 16 * kBytesPerBit;
 static constexpr uint32_t kObjCount = 256;
 
 static void ATTRIBUTE_NEVER_INLINE initializeMiniHeaps(FixedArray<MiniHeap, kMiniHeapCount> &miniheaps) {

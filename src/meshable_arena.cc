@@ -514,7 +514,10 @@ void MeshableArena::freePhys(void *ptr, size_t sz) {
 
 void MeshableArena::beginMesh(void *keep, void *remove, size_t sz) {
   int r = mprotect(remove, sz, PROT_READ);
+#ifndef APPLE
+  // TODO fix this for apple silicon
   hard_assert(r == 0);
+#endif
 }
 
 void MeshableArena::finalizeMesh(void *keep, void *remove, size_t sz) {

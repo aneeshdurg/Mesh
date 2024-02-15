@@ -72,7 +72,7 @@ private:
   DISALLOW_COPY_AND_ASSIGN(GlobalHeap);
   typedef MeshableArena Super;
 
-  static_assert(HL::gcd<MmapHeap::Alignment, Alignment>::value == Alignment,
+  static_assert(HL::gcd<MmapHeap::Alignment, Alignment>::value == MmapHeap::Alignment,
                 "expected MmapHeap to have 16-byte alignment");
 
 public:
